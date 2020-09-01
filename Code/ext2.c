@@ -1116,7 +1116,6 @@ int read_root_sector(EXT2_FILESYSTEM* fs, BYTE* sector)
 	SECTOR rootBlock;
 	get_inode(fs, inode, &inodeBuffer);
 	rootBlock = get_data_block_at_inode(fs, inodeBuffer, 1);
-	//data_read(fs, 0, rootBlock, sector);
 	return fs->disk->read_sector(fs->disk, rootBlock, sector);
 }
 
